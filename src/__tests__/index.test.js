@@ -31,6 +31,7 @@ describe('TaxiValuationTest',() => {
 describe('test read txt file', () => {
   it('should get test data', function () {
     var expected = '收费6元\n收费7元\n收费13元\n收费7元\n'
-    expect(ShowTaxiValuation.showPrice('.\\src\\fixtures\\testdata.txt')).toEqual(expected)
+    var filename = '.\\src\\fixtures\\testdata.txt'
+    expect(ShowTaxiValuation.showPrice(filename)).toEqual(expected)
   });
 })
