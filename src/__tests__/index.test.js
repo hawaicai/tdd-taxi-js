@@ -1,4 +1,5 @@
 import { TaxiValuation } from '../taxiValuation';
+import { ShowTaxiValuation } from '../showTaxiValuation';
 
 test('should ', () => {
   expect(1 + 1).toBe(2);
@@ -24,4 +25,15 @@ describe('TaxiValuationTest',() => {
     expect(app.getValuation()).toBe(7)
   });
 
+})
+
+
+describe('test read txt file', () => {
+  it('should get test data', function () {
+    var expected = '收费6元\\n\n' +
+      '收费7元\\n\n' +
+      '收费13元\\n\n' +
+      '收费7元\\n\n'
+    expect(ShowTaxiValuation.showPrice('.\\src\\fixtures\\testdata.txt')).toEqual(expected)
+  });
 })
