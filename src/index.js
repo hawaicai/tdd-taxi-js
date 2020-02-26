@@ -1,6 +1,9 @@
-function your_function_from_another_module() {
+import { ShowTaxiValuation } from '../showTaxiValuation';
+
+
+function your_function_from_another_module(testDataFile) {
   // TODO: rename and start coding, pls move your function out of this file
-  return 'Hello World!';
+  return ShowTaxiValuation.showPrice(testDataFile);
 }
 
 export default function main(testDataFile = 'testData.txt') {
