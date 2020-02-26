@@ -15,5 +15,9 @@ describe('TaxiValuationTest',() => {
     const app = new TaxiValuation(3, 0)
     expect(app.getValuation()).toBe(7)
   });
+  it('should be 13 when input distance 10 km and waite 0 minute given starting price', function () {
+    const app = new TaxiValuation(10, 0)
+    expect(app.getValuation()).toBe(13)
+  });
 
 })
