@@ -5,7 +5,8 @@ export class ShowTaxiValuation {
 
   static showPrice(filename) {
     var fs= require("fs")
-    const content = fs.readFileSync(filename, 'utf-8')
+    var filedir = '.\\src\\fixtures\\' + filename
+    const content = fs.readFileSync(filedir, 'utf-8')
     var list = content.split('\n')
     var index = 0
     var showString = ''
