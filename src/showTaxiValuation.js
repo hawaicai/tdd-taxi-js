@@ -1,27 +1,28 @@
+import { fs } from 'fs';
 import { TaxiValuation } from './taxiValuation';
-import { fs } from 'fs'
 
 export class ShowTaxiValuation {
-
   static showPrice(filename) {
-    var fs1= require("fs")
-    const path = require('path');
-    const filePath = `${path.resolve('./')}/src/fixtures/${filename}`;
-    const content = fs1.readFileSync(filePath, 'utf-8')
-    var list = content.split('\n')
-    var index = 0
-    var showString = ''
-    while (index < list.length)
-    {
-      var tmp = list[index].split(',')
-      var dis = parseInt(tmp[0].replace(/[^0-9]/ig,""))
-      var wat = parseInt(tmp[1].replace(/[^0-9]/ig,""))
-      const taxiValuation = new TaxiValuation(dis, wat)
-      showString = showString + '收费' + taxiValuation.getValuation() + '元\n'
-      index++
+    const content = this.getFileContent(filename);
+    const list = content.split('\n');
+    let index = 0;
+    let showString = '';
+    while (index < list.length) {
+      const tmp = list[index].split(',');
+      const dis = parseInt(tmp[0].replace(/[^0-9]/gi, ''));
+      const wat = parseInt(tmp[1].replace(/[^0-9]/gi, ''));
+      const taxiValuation = new TaxiValuation(dis, wat);
+      showString = `${showString}收费${taxiValuation.getValuation()}元\n`;
+      index++;
     }
-    return showString
+    return showString;
   }
 
-
+  static getFileContent(filename) {
+    const fs1 = require('fs');
+    const path = require('path');
+    const filePath = `${path.resolve('./')}/src/fixtures/${filename}`;
+    const content = fs1.readFileSync(filePath, 'utf-8');
+    return content;
+  }
 }
