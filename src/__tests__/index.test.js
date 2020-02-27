@@ -32,7 +32,7 @@ describe('TaxiValuationTest',() => {
 describe('test read txt file', () => {
   it('should get test data', function () {
     var expected = '收费6元\n收费7元\n收费13元\n收费7元\n'
-    var filename = 'testdata.txt'
+    var filename = 'testData.txt'
     expect(ShowTaxiValuation.showPrice(filename)).toEqual(expected)
   });
 })
