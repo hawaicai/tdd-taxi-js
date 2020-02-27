@@ -1,6 +1,6 @@
-import { TaxiValuation } from '../taxiValuation';
-import { ShowTaxiValuation } from '../showTaxiValuation';
-import main from '../index';
+import { TaxiValuation } from './taxiValuation';
+import { ShowTaxiValuation } from './showTaxiValuation';
+import main from '.';
 
 test('should ', () => {
   expect(1 + 1).toBe(2);
